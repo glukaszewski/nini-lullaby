@@ -58,12 +58,18 @@ p {
     height: calc(100% - 48px);
     align-items: center;
 }
-.wrapper div:first-child {
+.wrapper > div:first-child {
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    display: flex;
+    width: 100%;
     flex: 1;
     padding-bottom: 28px;
 }
-.wrapper div:last-child {
+.wrapper > div:last-child {
     padding-bottom: 16px;
+    transition: padding .2s ease-in-out;
 }
 
 ol {
@@ -86,4 +92,11 @@ button {
     font-style: normal;
     font-size: 1rem;
     transition: background-color .2s ease-in-out;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #303030;
+        color: #fff;
+    }
 }
