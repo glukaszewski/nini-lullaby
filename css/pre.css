@@ -1,0 +1,86 @@
+h6 {
+    margin: 56px 0 28px;
+}
+
+.file-q-version-container {
+    max-width: 240px;
+    margin: 0 auto;
+}
+.file-q-version-container h6:last-of-type {
+    margin-top: 28px;
+}
+
+.action-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+.action-container div:first-child button {
+    min-width: 154px;
+}
+.action-container div:last-child button {
+    min-width: 64px;
+    border-radius: 24px;
+    justify-content: center;
+}
+
+.license {
+    font-size: .625rem;
+}
+
+#file-player {
+    background-color: #fff;
+    box-shadow: 4px 6px 22px 0px #00000014;
+    border-top: 1px solid rgb(0, 0, 0, .12);
+    position: fixed;
+    width: 100%;
+    height: 56px;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+}
+#file-player.hidden {
+    transition: height .2s ease-in-out;
+    height: 0px;
+}
+#file-player > div {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 12px;
+}
+#file-player .bt-play svg:last-child {
+    display: none;
+}
+#file-player .bt-play.paused svg:first-child {
+    display: none;
+}
+#file-player .bt-play.paused svg:last-child {
+    display: block;
+}
+#file-player > div > div:last-child button {
+    margin-left: 12px;
+    border-color: transparent;
+}
+#file-player .music-info {
+    flex: 1;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 500px) {
+    .license {
+        font-size: .586rem;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .wrapper {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    #file-player .music-title span {
+        display: none;
+    }
+}

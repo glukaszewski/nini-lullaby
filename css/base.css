@@ -1,0 +1,89 @@
+body {
+    background-color: #fafafa;
+    color: rgb(0, 0, 0, .87);
+    font-family: "Dosis", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 3.25rem;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+}
+h2 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2.125rem;
+    line-height: 1.2;
+    letter-spacing: -0.00833em;
+}
+h6 {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: 1.167;
+    letter-spacing: -0.01562em;
+}
+p {
+    margin: 0
+}
+
+.content {
+    position: absolute;
+    display: flex;
+    height: calc(var(--vh, 1vh) * 100);
+    width: 100%;
+}
+.container {
+    width: 100%;
+    overflow: hidden auto;
+}
+.wrapper {
+    padding: 24px 32px;
+    display: flex;
+    flex-direction: column;
+    max-width: calc(600px - 64px);
+    margin: 0 auto;
+    height: calc(100% - 48px);
+    align-items: center;
+}
+.wrapper div:first-child {
+    flex: 1;
+    padding-bottom: 28px;
+}
+.wrapper div:last-child {
+    padding-bottom: 16px;
+}
+
+ol {
+    width: fit-content;
+    margin: 0 auto;
+}
+li {
+    font-size: 1.25rem;
+    padding-left: 24px;
+    margin-left: -40px;
+}
+li::marker {
+    font-size: 1rem;
+    min-width: 32px;
+}
+
+button {
+    font-family: "Funnel Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 1rem;
+    transition: background-color .2s ease-in-out;
+}
