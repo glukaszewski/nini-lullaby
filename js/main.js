@@ -128,7 +128,6 @@ function listenTo(version = 'mp3') {
         document.getElementsByTagName('body')[0].append(audioEl)
         const licenseEl = document.querySelector('.wrapper > div:last-child')
         if (licenseEl) licenseEl.style.paddingBottom = '80px'
-        audioEl.currentTime = 290
         audioEl.play()
     } catch (e) {
         console.error(e)
