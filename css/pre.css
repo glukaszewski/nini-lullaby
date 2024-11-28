@@ -156,14 +156,12 @@ h6 {
         margin: 6px 0;
     }
     .lang.open,
-    .lang:hover,
-    .lang:focus-visible {
+    .lang:hover {
         height: 128px;
         transition: height .2s ease-in-out;
     }
     .lang.open > div,
-    .lang:hover > div,
-    .lang:focus-visible > div {
+    .lang:hover > div {
         flex-wrap: nowrap;
     }
 }

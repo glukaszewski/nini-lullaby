@@ -323,6 +323,7 @@
         if (licenseEl) licenseEl.innerHTML = messages.LICENSE
         const langEl = document.getElementsByClassName('lang')[0]
         if (langEl) {
+            if (langEl.classList.contains('open')) langEl.classList.remove('open')
             const langButtonEl = langEl.getElementsByClassName('tx-secondary')[0]
             if (langButtonEl) {
                 langButtonEl.setAttribute('aria-label', messages.LANGUAGE)
