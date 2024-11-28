@@ -331,11 +331,39 @@
         }
     }
 
-    const langButtonList = document.querySelectorAll('.lang img')
-    Array.from(langButtonList).forEach(el => {
-        const lang = el.getAttribute('data-lang')
-        el.addEventListener('click', () => changeLanguage(lang))
-    })
+    const langEl = document.getElementsByClassName('lang')[0]
+    if (langEl) {
+        const mobileLangButton = langEl.getElementsByClassName('tx-secondary')[0]
+        if (mobileLangButton) {
+            const onToggleLangPanel = () => {
+                const fn = langEl.classList.contains('open') ? 'remove' : 'add'
+                langEl.classList[fn]('open')
+            }
+            let hasAddedClickListener = false
+            const onToggleLangClickEvent = () => {
+                if (window.innerWidth <= 660) {
+                    if (hasAddedClickListener) return
+                    mobileLangButton.setAttribute('role', 'button')
+                    mobileLangButton.setAttribute('tabindex', '0')
+                    mobileLangButton.addEventListener('click', onToggleLangPanel)
+                    hasAddedClickListener = true
+                } else {
+                    if (!hasAddedClickListener) return
+                    mobileLangButton.removeAttribute('role')
+                    mobileLangButton.removeAttribute('tabindex')
+                    mobileLangButton.removeEventListener('click', onToggleLangPanel)
+                    hasAddedClickListener = false
+                }
+            }
+            onToggleLangClickEvent()
+            window.addEventListener('resize', onToggleLangClickEvent)
+        }
+        const langButtonList = langEl.getElementsByTagName('img')
+        Array.from(langButtonList).forEach(el => {
+            const lang = el.getAttribute('data-lang')
+            el.addEventListener('click', () => changeLanguage(lang))
+        })
+    }
 
     try {
         const lang = localStorage.getItem('lang')
